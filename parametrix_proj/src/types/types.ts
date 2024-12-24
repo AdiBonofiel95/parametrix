@@ -20,6 +20,11 @@ export interface regionalDashboardData {
     responseTime?: number
 }
 
+export interface HistoricalData {
+    timestamp: string;
+    availability: number;
+}
+
 export enum Status {
     Online = 'online',
     Degraded = 'degraded',

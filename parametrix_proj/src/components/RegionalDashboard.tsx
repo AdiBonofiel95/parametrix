@@ -29,13 +29,13 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
                 <Table>
                     <TableHead>
                         {Object.keys(data).map((key) => (
-                            <TableCell key={regionName + key}>{key}</TableCell>
+                            <TableCell key={regionName + key} align='center'>{key}</TableCell>
                         ))}
                     </TableHead>
                     <TableBody>
                         <TableRow>
                             {Object.values(data).map((entry) => (
-                                <TableCell key={regionName + entry}>{entry}</TableCell>
+                                <TableCell key={regionName + entry} align='center'>{entry}</TableCell>
                             ))}
                         </TableRow>
                     </TableBody>

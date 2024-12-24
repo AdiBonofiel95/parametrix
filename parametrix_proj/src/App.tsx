@@ -1,13 +1,17 @@
 import './App.css';
-import { regionData } from './types/types';
-import RegionData from './data/mockData';
+import { HistoricalData, regionData } from './types/types';
+import RegionData from './mockData/regionData';
 import Dashboard from './components/Dashboard';
+import historicalDataUSEast from './mockData/USEastHistoric';
 
 
 
 function App() {
 
   const regionData: regionData[] = RegionData;
+  const historicalDataUSE: HistoricalData[] = historicalDataUSEast;
+
+  console.log(historicalDataUSE);
 
   return (
     <div className="App">

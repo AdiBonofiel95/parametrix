@@ -30,5 +30,4 @@ const RegionData: regionData[] = [{
 },
 ]
 
-
 export default RegionData;
