@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { RegionalDashboardData, RegionalDashboardProps } from '../types/types'
+import { RegionalDashboardData, RegionalDashboardProps, Status } from '../types/types'
 import Grid from '@mui/material/Grid2';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import StyledTytle from './StyledTytle';
+import StatusColorPallate from '../types/StatusColorPallete';
+import StatusIcon from './StatusIcon';
 
 
 export default function RegionalDashboard(props: RegionalDashboardProps) {
@@ -18,7 +20,10 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
         });
         setRegionName(props.regionalData.name)
     }, [props])
-    
+
+    const colorPallete = StatusColorPallate;
+
+    const getIconColor: (color: Status) => string = (color) => colorPallete[color];
 
     return (
         <Grid container flexDirection={'column'}>
@@ -34,8 +39,12 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            {Object.values(data).map((entry) => (
-                                <TableCell key={regionName + entry} align='center'>{entry}</TableCell>
+                            {Object.values(data).map((entry, index) => (
+                                <TableCell key={regionName + entry} align='center'>
+                                    <Grid container alignItems={'center'} spacing={1}>
+                                        {index === 0 && (<StatusIcon color={getIconColor(entry)}/>)}{entry}
+                                    </Grid>
+                                </TableCell>
                             ))}
                         </TableRow>
                     </TableBody>
