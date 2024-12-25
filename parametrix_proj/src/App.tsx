@@ -1,22 +1,32 @@
 import './App.css';
-import { HistoricalData, regionData } from './types/types';
-import RegionData from './mockData/regionData';
+import { HistoricalData, RegionData } from './types/types';
+import RegionsData from './mockData/regionData';
 import Dashboard from './components/Dashboard';
 import historicalDataUSEast from './mockData/USEastHistoric';
+import historicalDataUSWest from './mockData/USWestHistoric';
+import historicalDataEurope from './mockData/EuropeHistoric';
+import historicalDataAsiaPacific from './mockData/AsiaPacificHistoric';
+import Grid from '@mui/material/Grid2';
+import AvailabilityGraphs from './components/AvailabilityGraphs';
 
 
 
 function App() {
-
-  const regionData: regionData[] = RegionData;
-  const historicalDataUSE: HistoricalData[] = historicalDataUSEast;
-
-  console.log(historicalDataUSE);
+  const regionData: RegionData[] = RegionsData;
+  const historicalData: HistoricalData[][] = [
+    historicalDataUSEast, 
+    historicalDataUSWest, 
+    historicalDataEurope, 
+    historicalDataAsiaPacific
+  ];
 
   return (
     <div className="App">
       <h1>App</h1>
       <Dashboard allRegionsData={regionData} />
+      <Grid>
+        <AvailabilityGraphs historicalData={historicalData} regionData={regionData}/>
+      </Grid>
     </div>
   );
 }

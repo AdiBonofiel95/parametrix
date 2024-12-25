@@ -1,9 +1,6 @@
+import generateHistoricalData from "../services/GenerateHistoricMockData";
 import { HistoricalData } from "../types/types";
 
-const historicalData: HistoricalData[] = [
-    {
-      timestamp: '2024-03-19T00:00:00',
-      availability: 99.95,
-    },
-    // ... other timestamps
-];
+const historicalDataUSWest: HistoricalData[] = generateHistoricalData('2024-03-21T00:00:00Z');
+
+export default historicalDataUSWest;

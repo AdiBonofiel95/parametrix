@@ -1,12 +1,12 @@
 export interface RegionalDashboardProps {
-    regionalData: regionData,
+    regionalData: RegionData,
 }
 
 export interface DashboardProps {
-    allRegionsData: regionData[]
+    allRegionsData: RegionData[]
 }
 
-export interface regionData {
+export interface RegionData {
     id: string;
     name: string;
     status: Status;
@@ -14,7 +14,7 @@ export interface regionData {
     responseTime: number;
 }
 
-export interface regionalDashboardData {
+export interface RegionalDashboardData {
     status?: Status,
     availability?: number,
     responseTime?: number
@@ -23,6 +23,15 @@ export interface regionalDashboardData {
 export interface HistoricalData {
     timestamp: string;
     availability: number;
+}
+
+export interface RegionAvailabilityGraphProps {
+    regionHistoricalData: HistoricalData[]
+}
+
+export interface AvailabilityGraphsProps {
+    historicalData: HistoricalData[][],
+    regionData: RegionData[]
 }
 
 export enum Status {
