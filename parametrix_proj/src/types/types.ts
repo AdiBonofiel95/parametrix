@@ -34,6 +34,13 @@ export interface AvailabilityGraphsProps {
     regionData: RegionData[]
 }
 
+export interface DataCenterLocationsAndAvailability {
+    name: string,
+    latitude: number,
+    longitude: number,
+    status: Status
+}
+
 export enum Status {
     Online = 'online',
     Degraded = 'degraded',
