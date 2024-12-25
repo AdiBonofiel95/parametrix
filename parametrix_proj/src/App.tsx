@@ -24,9 +24,7 @@ function App() {
     <div className="App">
       <h1>App</h1>
       <Dashboard allRegionsData={regionData} />
-      <Grid>
-        <AvailabilityGraphs historicalData={historicalData} regionData={regionData}/>
-      </Grid>
+      <AvailabilityGraphs historicalData={historicalData} regionData={regionData}/> 
     </div>
   );
 }
