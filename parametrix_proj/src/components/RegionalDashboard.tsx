@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { regionalDashboardData, RegionalDashboardProps } from '../types/types'
+import { RegionalDashboardData, RegionalDashboardProps } from '../types/types'
 import Grid from '@mui/material/Grid2';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import StyledTytle from './StyledTytle';
@@ -7,7 +7,7 @@ import StyledTytle from './StyledTytle';
 
 export default function RegionalDashboard(props: RegionalDashboardProps) {
 
-    const [data, setData] = useState<regionalDashboardData>({});
+    const [data, setData] = useState<RegionalDashboardData>({});
     const [regionName, setRegionName] = useState('');
 
     useEffect(() => {

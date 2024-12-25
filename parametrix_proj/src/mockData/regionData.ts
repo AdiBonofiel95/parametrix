@@ -1,6 +1,6 @@
-import { regionData, Status } from '../types/types'
+import { RegionData, Status } from '../types/types'
 
-const RegionData: regionData[] = [{
+const RegionsData: RegionData[] = [{
     id: 'us-east',
     name: 'US East',
     status: Status.Online,
@@ -30,4 +30,4 @@ const RegionData: regionData[] = [{
 },
 ]
 
-export default RegionData;
+export default RegionsData;
