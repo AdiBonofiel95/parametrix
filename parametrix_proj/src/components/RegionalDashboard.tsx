@@ -26,11 +26,11 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
     const getIconColor: (color: Status) => string = (color) => colorPallete[color];
 
     return (
-        <Grid container flexDirection={'column'}>
-            <Grid container>
+        <Grid container flexDirection={'column'} size={6} paddingRight={'1.5%'} paddingLeft={'1.5%'} paddingBottom={'2%'}>
+            <Grid container justifyContent={'center'}>
                 <StyledTytle tytle={regionName} />
             </Grid>
-            <Grid container>
+            <Grid container >
                 <Table>
                     <TableHead>
                         {Object.keys(data).map((key) => (
@@ -41,7 +41,7 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
                         <TableRow>
                             {Object.values(data).map((entry, index) => (
                                 <TableCell key={regionName + entry} align='center'>
-                                    <Grid container alignItems={'center'} spacing={1}>
+                                    <Grid container justifyContent={'center'} alignItems={'center'} gap={'4px'}>
                                         {index === 0 && (<StatusIcon color={getIconColor(entry)}/>)}{entry}
                                     </Grid>
                                 </TableCell>

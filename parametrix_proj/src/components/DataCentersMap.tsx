@@ -1,4 +1,4 @@
-import { DataCenterLocationsAndAvailability, Status } from '../types/types'
+import { DataCenterLocationsAndAvailability } from '../types/types'
 import { ComposableMap, Geographies, Geography, Marker} from 'react-simple-maps';
 import Grid from '@mui/material/Grid2';
 import { useState } from 'react';
@@ -18,8 +18,8 @@ export default function DataCentersMap(props: DataCentersMapProps) {
     const markerColorPallet = StatusColorPallate;
 
     return (
-        <Grid container >
-            <ComposableMap style={{ width: '50%', height: 'auto' }}>
+        <Grid container size={10} justifyContent={'center'}>
+            <ComposableMap style={{ width: '85%', height: 'auto' }}>
                 <Geographies geography={geoUrl}>
                 {({ geographies }) =>
                 geographies.map((geo) => (

@@ -19,7 +19,7 @@ export default function AvailabilityGraphs(props: AvailabilityGraphsProps) {
     }
 
     return (
-        <Grid container flexDirection={"row"}>
+        <Grid container flexDirection={"row"} size={12} justifyContent={'center'}>
             <Grid container flexDirection={"column"} justifyContent={"center"} alignItems={"stretch"}>
                 {props.regionData.map((region, index) => (
                     <Grid container sx={{margin: "2px", flexDirection: "row"}}>
@@ -30,7 +30,7 @@ export default function AvailabilityGraphs(props: AvailabilityGraphsProps) {
                     </Grid>
                 ))}
             </Grid>
-            <Grid container flexDirection={"column"}>
+            <Grid container flexDirection={"column"} size={8}>
                 <Typography variant="h5">{displayedRegionName}</Typography>
                 <RegionAvailabilityGraph regionHistoricalData={graphData}/>
             </Grid>

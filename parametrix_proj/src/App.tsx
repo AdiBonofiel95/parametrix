@@ -27,9 +27,11 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
-      <Dashboard allRegionsData={regionData} />
-      <AvailabilityGraphs historicalData={historicalData} regionData={regionData}/> 
-      <DataCentersMap dataCenterLocationsAndAvailability={dataCenterLocations} />
+      <Grid container flexDirection={'column'} alignItems={'center'}>
+        <Dashboard allRegionsData={regionData} />
+        <AvailabilityGraphs historicalData={historicalData} regionData={regionData}/> 
+        <DataCentersMap dataCenterLocationsAndAvailability={dataCenterLocations} />
+      </Grid>
     </div>
   );
 }

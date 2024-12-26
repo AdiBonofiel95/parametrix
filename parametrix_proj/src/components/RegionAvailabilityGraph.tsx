@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { RegionAvailabilityGraphProps } from '../types/types'
-import { Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import Grid from '@mui/material/Grid2';
+
 
 export default function RegionAvailabilityGraph(props: RegionAvailabilityGraphProps) {
 
@@ -70,7 +72,8 @@ export default function RegionAvailabilityGraph(props: RegionAvailabilityGraphPr
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}>
-                <LineChart width={730} height={250} data={filteredData}>
+              <ResponsiveContainer width={"90%"} height={400}>
+                <LineChart data={filteredData}>
                     <XAxis dataKey="timestamp" />
                     <YAxis  />
                     <Legend />
@@ -78,6 +81,7 @@ export default function RegionAvailabilityGraph(props: RegionAvailabilityGraphPr
                     <Line type="monotone" dataKey="availability" stroke="#3f51b5" />
                     {/* <Brush dataKey="timestamp" height={10} stroke="#3f51b5"/> */}
                 </LineChart>
+              </ResponsiveContainer>
         </div>
     )
 }
