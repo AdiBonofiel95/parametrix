@@ -20,7 +20,7 @@ const generateAvailability = (): number => {
     const totalEntries = 24 * 60 / 10; // 24 hours worth of entries (144)
   
     for (let i = 0; i < totalEntries; i++) {
-      const timestamp = new Date(startTime + i * interval).toISOString();
+      const timestamp = new Date(startTime + i * interval).toISOString().slice(11, 19);
       const availability = generateAvailability();
       data.push({ timestamp, availability });
     }

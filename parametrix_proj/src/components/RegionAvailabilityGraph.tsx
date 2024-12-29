@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { RegionAvailabilityGraphProps } from '../types/types'
 import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import Grid from '@mui/material/Grid2';
 
 
 export default function RegionAvailabilityGraph(props: RegionAvailabilityGraphProps) {

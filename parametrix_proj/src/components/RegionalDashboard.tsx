@@ -26,7 +26,7 @@ export default function RegionalDashboard(props: RegionalDashboardProps) {
     const getIconColor: (color: Status) => string = (color) => colorPallete[color];
 
     return (
-        <Grid container flexDirection={'column'} size={6} paddingRight={'1.5%'} paddingLeft={'1.5%'} paddingBottom={'2%'}>
+        <Grid container flexDirection={'column'} size={{xs:12, sm:6}} paddingRight={'1.5%'} paddingLeft={'1.5%'} paddingBottom={'2%'}>
             <Grid container justifyContent={'center'}>
                 <StyledTytle tytle={regionName} />
             </Grid>
